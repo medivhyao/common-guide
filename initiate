@@ -1,0 +1,23 @@
+the 3 of install java environment on ubuntu
+1.a.sudo apt-get update
+  b.sudo apt-get install openjdk-8-jdk
+  c.java -version
+2.a.sudo apt-get install python-software-properties
+  b.sudo add-apt-repository ppa:webupd8team/java
+  c.sudo apt-get update
+  d.sudo apt-get install oracle-java8-installer
+  e.need to accept the license in installing and then checking installed 
+3.a.download jdk(http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+  b.sudo mkdir /usr/lib/jvm
+  c.sudo tar -zxvf jdk.gz -C /usr/lib/jvm
+  d.sudo vi ~/bashrc
+  e.add some config lines to the end of index:
+    #set oracle jdk environment
+    export JAVA_HOME=/usr/lib/jvm/jdk  
+    export JRE_HOME=${JAVA_HOME}/jre  
+    export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib  
+    export PATH=${JAVA_HOME}/bin:$PATH 
+  f.source ~/.bashrc
+  g.sudo update-alternatives 
+  h.sudo update-alternatives -config java --if you install more versions of java 
+  
